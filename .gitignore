@@ -1,0 +1,31 @@
+# History & workspace files
+.Rhistory
+.RData
+.Ruserdata
+
+# RStudio project files
+.Rproj.user/
+
+# Packages & builds
+*.tar.gz
+*.Rcheck/
+
+# Python caches
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Office temp files
+~$*
+*.tmp
+
+# OS specific
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Secrets
+.env
+*.key
+credentials.json

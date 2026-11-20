@@ -109,7 +109,7 @@ build_active_formula_ui <- function(itype, metric, input_list, res) {
         class = "kawe-math-card",
         div(class = "kawe-formula-title", icon("square-root-alt"), " Metode: Post-Test Means & Standard Deviations (Dua Kelompok Independen)"),
         div(class = "kawe-formula-sub", "Rujukan Baku: Cohen (1988); Hedges (1981); Borenstein et al. (2009)."),
-        p("Mengestimasi perbedaan rata-rata terstandarisasi antara kelompok intervensi dan kontrol pascates menggunakan deviasi baku gabungan (", tags$em("pooled standard deviation"), ")."),
+        p("Mengestimasi perbedaan rata-rata terstandardisasi antara kelompok intervensi dan kontrol pascates menggunakan deviasi baku gabungan (", tags$em("pooled standard deviation"), ")."),
         
         div(class = "fw-bold text-primary mt-3 mb-1", "1. Landasan Formulasi Matematis:"),
         div(class = "kawe-eq-box",
@@ -190,7 +190,7 @@ build_active_formula_ui <- function(itype, metric, input_list, res) {
         class = "kawe-math-card",
         div(class = "kawe-formula-title", icon("square-root-alt"), " Metode: Means & Standard Errors (Dua Kelompok Independen)"),
         div(class = "kawe-formula-sub", "Rujukan Baku: Higgins et al. (2019); Cochrane Handbook; Borenstein et al. (2009)."),
-        p("Ketika deviasi baku (SD) tidak dilaporkan, deviasi baku direkonstruksi matematis dari Standar Error (SE) dan ukuran sampel n."),
+        p("Ketika deviasi baku (SD) tidak dilaporkan, deviasi baku direkonstruksi matematis dari Galat Baku (SE) dan ukuran sampel n."),
         
         div(class = "fw-bold text-primary mt-3 mb-1", "1. Landasan Formulasi Matematis:"),
         div(class = "kawe-eq-box",
@@ -1232,7 +1232,7 @@ ui <- page_navbar(
       div(
         class = "row align-items-center w-100 m-0", # Sebaris, sejajar tengah, & lebar penuh
         
-        # Bahagian Kiri (Lebar 3 dari 12 kolom = 25% agar ruang kanan maksimal)
+        # Bagian Kiri (Lebar 3 dari 12 kolom = 25% agar ruang kanan maksimal)
         div(
           class = "col-md-3 kawe-brand-horizontal mb-3 mb-md-0",
           style = "gap: 1.5rem; justify-content: center;",
@@ -1243,7 +1243,7 @@ ui <- page_navbar(
           )
         ),
         
-        # Bahagian Kanan (Lebar 9 dari 12 kolom = 75%)
+        # Bagian Kanan (Lebar 9 dari 12 kolom = 75%)
         div(
           class = "col-md-9",
           
@@ -1296,7 +1296,7 @@ ui <- page_navbar(
             p(
               class = "small text-muted mb-3",
               style = "line-height: 1.6; min-height: 58px;",
-              "Evaluasi dimensionalitas instrumen, muatan faktor terstandarisasi (λ), eliminasi butir redundan, dan komparasi kelayakan model (Uni, Multi, Second-Order, Bi-Factor)."
+              "Evaluasi dimensionalitas instrumen, muatan faktor terstandardisasi (λ), eliminasi butir redundan, dan komparasi kelayakan model (Uni, Multi, Second-Order, Bi-Factor)."
             ),
             div(
               class = "d-flex flex-wrap justify-content-center gap-1 mb-3 text-center",
@@ -1372,7 +1372,7 @@ ui <- page_navbar(
             p(
               class = "small text-muted mb-3",
               style = "line-height: 1.6; min-height: 58px;",
-              "Kalkulasi besaran efek terstandarisasi (g/d/r/OR), sintesis bukti random-effects, analisis heterogenitas (τ², I²), forest plot interaktif, meta-regresi, dan diagnostik bias publikasi."
+              "Kalkulasi besaran efek terstandardisasi (g/d/r/OR), sintesis bukti random-effects, analisis heterogenitas (τ², I²), forest plot interaktif, meta-regresi, dan diagnostik bias publikasi."
             ),
             div(
               class = "d-flex flex-wrap justify-content-center gap-1 mb-3 text-center",
@@ -1441,7 +1441,7 @@ ui <- page_navbar(
               sliderInput("cfa_sim_n", "Jumlah Responden (N):", min = 100, max = 1500, value = 300, step = 50),
               sliderInput("cfa_sim_k", "Total Butir Kuesioner (k):", min = 6, max = 30, value = 12, step = 1),
               sliderInput("cfa_sim_factors", "Jumlah Dimensi Laten:", min = 1, max = 5, value = 3, step = 1),
-              sliderInput("cfa_sim_cor", "Korelasi Antar-Dimensi:", min = 0.0, max = 0.70, value = 0.35, step = 0.05),
+              sliderInput("cfa_sim_cor", "Korelasi Antardimensi:", min = 0.0, max = 0.70, value = 0.35, step = 0.05),
               sliderInput("cfa_sim_likert", "Kategori Skala Likert (1 - m):", min = 4, max = 7, value = 5, step = 1),
               actionButton("btn_cfa_gen_sim", "Bangkitkan Data Simulasi", class = "btn-primary w-100", icon = icon("dice"))
             )
@@ -1623,7 +1623,7 @@ ui <- page_navbar(
           div(
             class = "alert alert-light border my-2 py-2 small",
             icon("info-circle", class = "text-primary me-2"),
-            span("Kriteria Baku Emas Normalitas Univariat (Kline, 2016; West et al., 1995): Nilai absolut |Skewness| < 2.0 dan |Kurtosis| < 7.0 mengindikasikan distribusi butir masih memenuhi asumsi normalitas univariat untuk estimator berbasis Maximum Likelihood.")
+            span("Kriteria Standar Emas Normalitas Univariat (Kline, 2016; West et al., 1995): Nilai absolut |Skewness| < 2.0 dan |Kurtosis| < 7.0 mengindikasikan distribusi butir masih memenuhi asumsi normalitas univariat untuk estimator berbasis Maximum Likelihood.")
           ),
           div(
             style = "clear: both; overflow-x: auto; width: 100%;",
@@ -1648,7 +1648,7 @@ ui <- page_navbar(
       )
     ),
     
-    # 2.3 Matriks Korelasi (Pearson & Polikhorik)
+    # 2.3 Matriks Korelasi (Pearson & Polikorik)
     nav_panel(
       title = "Matriks Korelasi",
       value = "tab_cfa_cor",
@@ -1702,7 +1702,7 @@ ui <- page_navbar(
           div(
             class = "alert alert-light border my-2 py-2 small",
             icon("info-circle", class = "text-primary me-2"),
-            span("Kriteria Diagnostik Matriks R: Nilai Determinan |R| > 0.00001 mengindikasikan matriks definit positif dan bebas dari singularitas/multikolinieritas ekstrem. KMO MSA >= 0.70 (Kaiser, 1974) dan Bartlett's Test of Sphericity (p < 0.001) mengonfirmasi kecukupan interkorelasi butir untuk diestimasi dalam model faktor.")
+            span("Kriteria Diagnostik Matriks R: Nilai Determinan |R| > 0.00001 mengindikasikan matriks definit positif dan bebas dari singularitas/multikolinearitas ekstrem. KMO MSA >= 0.70 (Kaiser, 1974) dan Bartlett's Test of Sphericity (p < 0.001) mengonfirmasi kecukupan interkorelasi butir untuk diestimasi dalam model faktor.")
           ),
           layout_columns(
             col_widths = c(7, 5),
@@ -1732,16 +1732,16 @@ ui <- page_navbar(
           )
         ),
         nav_panel(
-          title = "Korelasi Polikhorik (IFA / DWLS / WLSMV)",
+          title = "Korelasi Polikorik (IFA / DWLS / WLSMV)",
           value = "subtab_cor_poly",
           icon = icon("layer-group"),
           div(
             class = "d-flex justify-content-between align-items-center mb-3",
             div(
-              h5(class = "fw-bold text-primary mb-1", icon("layer-group"), " Matriks Korelasi Polikhorik (\u03c1)"),
-              p(class = "small text-muted mb-0", "Mengestimasi korelasi laten kontinum yang mendasari respon skala ordinal/kategorikal terurut (Likert). Input wajib untuk Item Factor Analysis (IFA) dan estimator Robust DWLS / WLSMV.")
+              h5(class = "fw-bold text-primary mb-1", icon("layer-group"), " Matriks Korelasi Polikorik (\u03c1)"),
+              p(class = "small text-muted mb-0", "Mengestimasi korelasi laten kontinum yang mendasari respons skala ordinal/kategorikal terurut (Likert). Input wajib untuk Item Factor Analysis (IFA) dan estimator Robust DWLS / WLSMV.")
             ),
-            downloadButton("btn_dl_cfa_poly_csv", "Unduh CSV Matriks Polikhorik", class = "btn-sm btn-outline-success")
+            downloadButton("btn_dl_cfa_poly_csv", "Unduh CSV Matriks Polikorik", class = "btn-sm btn-outline-success")
           ),
           layout_columns(
             col_widths = c(3, 3, 3, 3),
@@ -1753,14 +1753,14 @@ ui <- page_navbar(
               p(class = "small text-muted mb-0", textOutput("vb_cfa_poly_det_sub"))
             ),
             value_box(
-              title = "KMO Polikhorik MSA",
+              title = "KMO Polikorik MSA",
               value = textOutput("vb_cfa_poly_kmo"),
               showcase = icon("check-circle"),
               theme = "info",
               p(class = "small text-muted mb-0", textOutput("vb_cfa_poly_kmo_sub"))
             ),
             value_box(
-              title = "Bartlett Polikhorik (p)",
+              title = "Bartlett Polikorik (p)",
               value = textOutput("vb_cfa_poly_bartlett"),
               showcase = icon("project-diagram"),
               theme = "success",
@@ -1778,12 +1778,12 @@ ui <- page_navbar(
           div(
             class = "alert alert-light border my-2 py-2 small",
             icon("info-circle", class = "text-primary me-2"),
-            span("Landasan Metodologis IFA / DWLS: Penggunaan korelasi Pearson pada data ordinal/Likert mengatenuasi besaran korelasi (Holgado-Tello et al., 2010; Muth\u00e9n, 1984). Korelasi polikhorik memulihkan parameter asosiasi laten tanpa bias restriksi kategorikal, menjadikannya input fundamental bagi estimator DWLS / WLSMV di lavaan.")
+            span("Landasan Metodologis IFA / DWLS: Penggunaan korelasi Pearson pada data ordinal/Likert mengatenuasi besaran korelasi (Holgado-Tello et al., 2010; Muth\u00e9n, 1984). Korelasi polikorik memulihkan parameter asosiasi laten tanpa bias restriksi kategorikal, menjadikannya input fundamental bagi estimator DWLS / WLSMV di lavaan.")
           ),
           layout_columns(
             col_widths = c(7, 5),
             card(
-              card_header(class = "bg-light fw-bold text-primary", icon("table"), " Tabel Matriks Korelasi Polikhorik (\u03c1)"),
+              card_header(class = "bg-light fw-bold text-primary", icon("table"), " Tabel Matriks Korelasi Polikorik (\u03c1)"),
               card_body(
                 div(
                   style = "clear: both; overflow-x: auto; width: 100%;",
@@ -1794,7 +1794,7 @@ ui <- page_navbar(
             card(
               card_header(
                 class = "bg-light d-flex justify-content-between align-items-center",
-                span(class = "fw-bold text-primary", icon("image"), " Visualisasi Heatmap Polikhorik"),
+                span(class = "fw-bold text-primary", icon("image"), " Visualisasi Heatmap Polikorik"),
                 div(
                   class = "d-flex gap-2 align-items-center",
                   checkboxInput("cfa_poly_show_vals", "Tampilkan Angka", value = TRUE, width = "auto"),
@@ -1808,7 +1808,7 @@ ui <- page_navbar(
           )
         ),
         
-        # Sub-tab 3: Delta Atenuasi (Disebelah Tab Polikhorik)
+        # Sub-tab 3: Delta Atenuasi (Di sebelah Tab Polikorik)
         nav_panel(
           title = "Delta Atenuasi (\\Delta = \\rho - r)",
           value = "subtab_cor_delta",
@@ -1817,7 +1817,7 @@ ui <- page_navbar(
             class = "d-flex justify-content-between align-items-center mb-3",
             div(
               h5(class = "fw-bold text-danger mb-1", icon("balance-scale"), " Matriks Delta Atenuasi (\\Delta = \\rho - r)"),
-              p(class = "small text-muted mb-0", "Mengkuantifikasi derajat pemulihan parameter asosiasi laten dan atenuasi koefisien Pearson akibat restriksi respon kategorikal (Likert).")
+              p(class = "small text-muted mb-0", "Mengkuantifikasi derajat pemulihan parameter asosiasi laten dan atenuasi koefisien Pearson akibat restriksi respons kategorikal (Likert).")
             ),
             downloadButton("btn_dl_cfa_delta_matrix_csv", "Unduh CSV Matriks Delta (\\Delta)", class = "btn-sm btn-outline-danger")
           ),
@@ -1913,9 +1913,9 @@ ui <- page_navbar(
           width = 360,
           title = "Parameter Eliminasi Cepat",
           sliderInput("cfa_elim_max_cor", "Batas Korelasi Item Maks (Redundansi):", min = 0.60, max = 0.95, value = 0.80, step = 0.05),
-          p(class = "small text-muted mb-2", "Butir yang saling berkorelasi r > ambang batas (misal r > 0.80) ditandai sebagai redundan/kolinier."),
+          p(class = "small text-muted mb-2", "Butir yang saling berkorelasi r > ambang batas (misal r > 0.80) ditandai sebagai redundan/kolinear."),
           sliderInput("cfa_elim_min_load", "Batas Muatan Faktor Minimum (λ):", min = 0.30, max = 0.65, value = 0.40, step = 0.05),
-          p(class = "small text-muted mb-2", "Butir dengan muatan faktor terstandarisasi λ < batas akan dieliminasi."),
+          p(class = "small text-muted mb-2", "Butir dengan muatan faktor terstandardisasi λ < batas akan dieliminasi."),
           hr(class = "my-2"),
           checkboxInput("cfa_elim_apply_cap", "Batasi Jumlah Butir per Dimensi", value = FALSE),
           conditionalPanel(
@@ -2067,7 +2067,7 @@ ui <- page_navbar(
             span("Pedoman Hu & Bentler (1999): Model dinyatakan memiliki kesesuaian yang baik (Good Fit) apabila CFI >= 0.95, TLI >= 0.95, RMSEA <= 0.06, dan SRMR <= 0.08.")
           ),
           hr(class = "my-3"),
-          h6(class = "fw-bold text-primary", icon("list-ol"), " Muatan Faktor Terstandarisasi (Standardized Factor Loadings λ):"),
+          h6(class = "fw-bold text-primary", icon("list-ol"), " Muatan Faktor Terstandardisasi (Standardized Factor Loadings λ):"),
           DTOutput("table_cfa_loadings"),
           hr(class = "my-3"),
           h6(class = "fw-bold text-primary", icon("project-diagram"), " Matriks Kovarians & Korelasi Antar-Faktor Laten:"),
@@ -2127,7 +2127,7 @@ ui <- page_navbar(
           sliderInput("cfa_path_cex", "Ukuran Simbol & Label:", min = 0.5, max = 1.3, value = 0.85, step = 0.05),
           sliderInput("cfa_path_edge_width", "Ketebalan Garis Panah (APA 7th Standar):", min = 0.8, max = 2.0, value = 1.2, step = 0.1),
           sliderInput("cfa_path_height", "Tinggi Kanvas Diagram (px):", min = 600, max = 1300, value = 820, step = 40),
-          checkboxInput("cfa_path_show_std", "Tampilkan Nilai Loading Terstandarisasi", value = TRUE),
+          checkboxInput("cfa_path_show_std", "Tampilkan Nilai Loading Terstandardisasi", value = TRUE),
           checkboxInput("cfa_path_show_resid", "Tampilkan Varians Residual", value = FALSE),
           hr(class = "my-2"),
           downloadButton("btn_dl_cfa_path_png", "Unduh Gambar (PNG 300 DPI)", class = "btn-primary w-100 mb-2"),
@@ -2224,13 +2224,13 @@ ui <- page_navbar(
             )
           ),
           card(
-            card_header(class = "bg-light fw-bold text-primary", icon("graduation-cap"), " Catatan Metodologis & Evaluasi Substantif Parsimoni"),
+            card_header(class = "bg-light fw-bold text-primary", icon("graduation-cap"), " Catatan Metodologis & Evaluasi Parsimoni Model"),
             card_body(
               div(
                 class = "alert alert-light border mb-0 small",
                 style = "line-height: 1.7;",
                 p(strong("Pedoman Penilaian Model CFA (Hu & Bentler, 1999; Kline, 2016):"), 
-                  " Pemilihan model pengukuran terbaik tidak semata-mata bertumpu pada minimisasi nilai Chi-Square (χ²), melainkan menyeimbangkan kecukupan aproksimasi kovarians empiris (CFI/TLI >= 0.95, RMSEA <= 0.06, SRMR <= 0.08) dengan prinsip parsimoni teoritis yang direfleksikan oleh indeks informasi AIC dan BIC."),
+                  " Pemilihan model pengukuran terbaik tidak semata-mata bertumpu pada minimisasi nilai Chi-Square (χ²), melainkan menyeimbangkan kecukupan aproksimasi kovarians empiris (CFI/TLI >= 0.95, RMSEA <= 0.06, SRMR <= 0.08) dengan prinsip parsimoni model yang direfleksikan oleh indeks informasi AIC dan BIC."),
                 p(strong("Dinamika Model Bi-Factor vs Multidimensi:"),
                   " Pada konstruksi skala psikologi, model bi-factor sering kali menghasilkan peningkatan nilai fit mekanis akibat relaksasi ortogonalitas. Namun demikian, peneliti perlu memeriksa apakah muatan faktor spesifik tetap substansial (λ >= 0.30) atau mengalami atenuasi tajam setelah varians umum diekstraksi oleh faktor general.")
               )
@@ -2278,23 +2278,23 @@ ui <- page_navbar(
               sliderInput("rasch_sim_k", "Total Butir (k):", min = 5, max = 30, value = 10, step = 1),
               radioButtons(
                 "rasch_sim_format",
-                "Format Respon:",
+                "Format Respons:",
                 choices = c("Dikotomi (0/1)" = "dichotomous", "Politomi Likert (Rating Scale/PCM)" = "polytomous"),
                 selected = "dichotomous"
               ),
               radioButtons(
                 "rasch_sim_dim_count",
-                "Dimensialitas Laten:",
+                "Dimensionalitas Laten:",
                 choices = c("Unidimensi (1 Dimensi)" = "uni", "Multidimensi (2 Dimensi)" = "multi_2", "Multidimensi (3 Dimensi)" = "multi_3"),
                 selected = "uni"
               ),
               conditionalPanel(
                 condition = "input.rasch_sim_dim_count != 'uni'",
-                sliderInput("rasch_sim_cor", "Korelasi Antar-Dimensi:", min = 0.1, max = 0.8, value = 0.40, step = 0.05)
+                sliderInput("rasch_sim_cor", "Korelasi Antardimensi:", min = 0.1, max = 0.8, value = 0.40, step = 0.05)
               ),
               conditionalPanel(
                 condition = "input.rasch_sim_format == 'polytomous'",
-                sliderInput("rasch_sim_n_cats", "Kategori Respon (0 s/d m):", min = 3, max = 5, value = 4, step = 1)
+                sliderInput("rasch_sim_n_cats", "Kategori Respons (0 s/d m):", min = 3, max = 5, value = 4, step = 1)
               ),
               actionButton("btn_rasch_gen_sim", "Bangkitkan Data Simulasi Rasch", class = "btn-primary w-100", icon = icon("dice"))
             )
@@ -2536,7 +2536,7 @@ ui <- page_navbar(
             div(
               class = "alert alert-light border my-2 py-2 small",
               icon("info-circle", class = "text-primary me-2"),
-              span("Kriteria Linacre (2002): Rentang nilai Mean Square (MNSQ) antara 0.50 hingga 1.50 dikategorikan produktif untuk pengukuran. Nilai MNSQ > 1.50 mengindikasikan adanya noise / variasi acak (underfit), sedangkan MNSQ < 0.50 mengindikasikan pola respon yang terlalu terduga / redundan (overfit).")
+              span("Kriteria Linacre (2002): Rentang nilai Mean Square (MNSQ) antara 0.50 hingga 1.50 dikategorikan produktif untuk pengukuran. Nilai MNSQ > 1.50 mengindikasikan adanya noise / variasi acak (underfit), sedangkan MNSQ < 0.50 mengindikasikan pola respons yang terlalu terduga / redundan (overfit).")
             ),
             div(
               style = "width: 100%; overflow-x: auto; clear: both; margin-top: 15px; margin-bottom: 15px;",
@@ -2563,7 +2563,7 @@ ui <- page_navbar(
             div(
               class = "alert alert-light border my-2 py-2 small",
               icon("info-circle", class = "text-primary me-2"),
-              span("Thurstonian Thresholds mengindikasikan titik kontinum laten (θ) di mana probabilitas kumulatif untuk merespons kategori k atau lebih tinggi mencapai 50%. Nilai ambang batas yang monoton meningkat mencerminkan keterurutan kategori respon (ordered response categories).")
+              span("Thurstonian Thresholds mengindikasikan titik kontinum laten (θ) di mana probabilitas kumulatif untuk merespons kategori k atau lebih tinggi mencapai 50%. Nilai ambang batas yang monoton meningkat mencerminkan keterurutan kategori respons (ordered response categories).")
             )
           )
         )
@@ -2712,7 +2712,7 @@ ui <- page_navbar(
                 selected = "either"
               ),
               sliderInput("rasch_re_person_mnsq_thresh", "Batas Maksimal Person MNSQ:", min = 1.20, max = 2.50, value = 1.50, step = 0.05),
-              p(class = "small text-muted mb-0", "Responden dengan Person MNSQ > ambang batas mengindikasikan deviasi pola respon (tebakan acak, kepatuhan parsial, atau careless responding).")
+              p(class = "small text-muted mb-0", "Responden dengan Person MNSQ > ambang batas mengindikasikan deviasi pola respons (tebakan acak, kepatuhan parsial, atau careless responding).")
             )
           ),
           
@@ -2947,9 +2947,9 @@ ui <- page_navbar(
                 class = "alert alert-light border mb-0 small",
                 style = "line-height: 1.7;",
                 p(strong("Dilema RSM vs PCM (Invariansi Ambang Batas):"),
-                  " Rating Scale Model (RSM) merupakan model yang paling parsimonius karena mengasumsikan parameter transisi antar-kategori respon (step parameters) konstan untuk seluruh butir instrumen. Sebaliknya, Partial Credit Model (PCM) merelaksasi asumsi tersebut dengan mengestimasi ambang batas secara spesifik pada masing-masing butir. Penurunan nilai Deviance yang signifikan pada uji LRT mengindikasikan bahwa asumsi jarak kategori yang seragam tidak didukung secara empiris oleh data respons."),
+                  " Rating Scale Model (RSM) merupakan model yang paling hemat parameter (parsimoni tertinggi) karena mengasumsikan parameter transisi antarkategori respons (step parameters) konstan untuk seluruh butir instrumen. Sebaliknya, Partial Credit Model (PCM) merelaksasi asumsi tersebut dengan mengestimasi ambang batas secara spesifik pada masing-masing butir. Penurunan nilai Deviance yang signifikan pada uji LRT mengindikasikan bahwa asumsi jarak kategori yang seragam tidak didukung secara empiris oleh data respons."),
                 p(strong("Implikasi Multidimensionalitas (MRSM & MPCM):"),
-                  " Pemodelan multidimensi memperhitungkan heterogenitas atribut laten partisipan secara simultan melalui matriks varians-kovarians. Pengabaian dimensi laten yang terbukti distingtif dapat memicu atenuasi reliabilitas dan distorsi estimasi kemampuan individu (θ).")
+                  " Pemodelan multidimensi memperhitungkan heterogenitas atribut laten partisipan secara simultan melalui matriks varians-kovarians. Pengabaian dimensi laten yang terbukti terpisah secara empiris dapat memicu atenuasi reliabilitas dan distorsi estimasi kemampuan individu (θ).")
               )
             )
           )
@@ -3433,7 +3433,7 @@ ui <- page_navbar(
                         title = span(icon("chart-bar"), " 1. Standardized Mean Difference: Rata-rata Pascates & Deviasi Baku (Post-Test Means & SDs)"),
                         value = "acc_post_means",
                         div(
-                          p("Desain eksperimen dua kelompok independen (treatment vs control) pascates mengevaluasi perbedaan rata-rata terstandarisasi. Formulasi baku didasarkan pada Cohen (1988) dan Hedges (1981):"),
+                          p("Desain eksperimen dua kelompok independen (treatment vs control) pascates mengevaluasi perbedaan rata-rata terstandardisasi. Formulasi baku didasarkan pada Cohen (1988) dan Hedges (1981):"),
                           div(class = "kawe-eq-box",
                             HTML("$$\\text{Selisih Rata-rata: } \\Delta\\bar{X} = \\bar{X}_1 - \\bar{X}_2$$"),
                             HTML("$$\\text{Deviasi Baku Gabungan: } s_{\\text{pooled}} = \\sqrt{\\frac{(n_1 - 1)s_1^2 + (n_2 - 1)s_2^2}{n_1 + n_2 - 2}}$$"),
@@ -3508,7 +3508,7 @@ ui <- page_navbar(
                         title = span(icon("th-large"), " 5. Luaran Dikotomis / Tabel Kontingensi 2x2 (Odds Ratio ke SMD)"),
                         value = "acc_binary",
                         div(
-                          p("Konversi rasio odds (OR) dari luaran biner (misalnya respon klinis, remisi) ke skala standardized mean difference d (Chinn, 2000; Hasselblad & Hedges, 1995):"),
+                          p("Konversi rasio odds (OR) dari luaran biner (misalnya respons klinis, remisi) ke skala standardized mean difference d (Chinn, 2000; Hasselblad & Hedges, 1995):"),
                           div(class = "kawe-eq-box",
                             HTML("$$\\text{Odds Ratio: } OR = \\frac{a \\cdot d}{b \\cdot c}, \\quad \\ln(OR) = \\ln(a) - \\ln(b) - \\ln(c) + \\ln(d)$$"),
                             HTML("$$\\text{Varians Woolf: } v_{\\ln(OR)} = \\frac{1}{a} + \\frac{1}{b} + \\frac{1}{c} + \\frac{1}{d}$$"),
@@ -3988,7 +3988,7 @@ ui <- page_navbar(
           card(
             card_header(class = "bg-light fw-bold text-primary", icon("shield-alt"), " UJI ASIMETRI & KETAHANAN PUBLIKASI"),
             card_body(
-              h6("1. Uji Regresi Linier Egger (Egger's Test, k.min = 5):", class = "fw-bold text-dark"),
+              h6("1. Uji Regresi Linear Egger (Egger's Test, k.min = 5):", class = "fw-bold text-dark"),
               tableOutput("table_egger_test"),
               
               hr(class = "my-2"),
@@ -4159,7 +4159,7 @@ ui <- page_navbar(
         class = "mb-4 shadow-sm",
         card_header(
           class = "bg-light d-flex align-items-center",
-          span(class = "fw-bold text-primary", icon("balance-scale"), " 1. ESTIMASI BESARAN EFEK TERSTANDARISASI (COHEN'S d vs HEDGES' g)")
+          span(class = "fw-bold text-primary", icon("balance-scale"), " 1. ESTIMASI BESARAN EFEK TERSTANDARDISASI (COHEN'S d vs HEDGES' g)")
         ),
         card_body(
           layout_columns(
@@ -4174,7 +4174,7 @@ ui <- page_navbar(
               p(
                 "Hedges (1981) memperkenalkan faktor pembobot koreksi ", tags$em("J"), " berbasis fungsi Gamma dan derajat kebebasan (", tags$code("df = n1 + n2 - 2"), "). ",
                 "Faktor ini menghasilkan ", tags$em("unbiased standardized mean difference"), " (", tags$em("Hedges' g"), "). ",
-                "Berdasarkan pedoman Cochrane Handbook dan PRISMA 2020, pelaporan ", tags$em("Hedges' g"), " merupakan standard emas yang wajib diutamakan pada seluruh sintesis bukti kuantitatif."
+                "Berdasarkan pedoman Cochrane Handbook dan PRISMA 2020, pelaporan ", tags$em("Hedges' g"), " merupakan standar emas yang wajib diutamakan pada seluruh sintesis bukti kuantitatif."
               )
             ),
             div(
@@ -4527,14 +4527,14 @@ ui <- page_navbar(
             div(
               h6("Estimasi Kontinu vs Kategorikal Ordinal (Finney & DiStefano, 2013)", class = "text-primary fw-bold mb-2"),
               p(
-                "Ketepatan estimasi parameter muatan faktor dan standar eror sangat ditentukan oleh kesesuaian antara tipe skala data empiris dan fungsi estimasi (", tags$em("discrepancy function"), ") yang digunakan:"
+                "Ketepatan estimasi parameter muatan faktor dan galat baku sangat ditentukan oleh kesesuaian antara tipe skala data empiris dan fungsi estimasi (", tags$em("discrepancy function"), ") yang digunakan:"
               ),
               tags$ul(
                 class = "small mb-2",
-                tags$li(strong("Maximum Likelihood (ML): "), "Mengasumsikan normalitas multivariat pada data berskala kontinu interval/rasio. Rentan menggelembungkan statistik uji chi-kuadrat dan meremehkan standar eror bila asumsi normalitas dilanggar."),
-                tags$li(strong("Robust ML (MLM / Satorra-Bentler): "), "Menerapkan koreksi Satorra-Bentler scaled chi-square dan standar eror robust tipe sandwich untuk menangani ketidaknormalan distribusi kontinu."),
-                tags$li(strong("Huber-White Sandwich (MLR): "), "Menggunakan estimator kuasi-ML dengan standar eror robust dan penskalaan Yuan-Bentler. Sangat tangguh pada sampel sedang dan mendukung data hilang (FIML)."),
-                tags$li(strong("Diagonally Weighted Least Squares (WLSMV): "), "Standard emas untuk data ordinal/kategorikal (skala Likert 3–7 pilihan) yang dianalisis melalui matriks korelasi polikorik (polychoric correlation). Menghindari distorsi atenuasi muatan faktor akibat pelanggaran skala kontinu.")
+                tags$li(strong("Maximum Likelihood (ML): "), "Mengasumsikan normalitas multivariat pada data berskala kontinu interval/rasio. Rentan menggelembungkan statistik uji chi-kuadrat dan meremehkan galat baku bila asumsi normalitas dilanggar."),
+                tags$li(strong("Robust ML (MLM / Satorra-Bentler): "), "Menerapkan koreksi Satorra-Bentler scaled chi-square dan galat baku robust tipe sandwich untuk menangani ketidaknormalan distribusi kontinu."),
+                tags$li(strong("Huber-White Sandwich (MLR): "), "Menggunakan estimator kuasi-ML dengan galat baku robust dan penskalaan Yuan-Bentler. Sangat tangguh pada sampel sedang dan mendukung data hilang (FIML)."),
+                tags$li(strong("Diagonally Weighted Least Squares (WLSMV): "), "Standar emas untuk data ordinal/kategorikal (skala Likert 3–7 pilihan) yang dianalisis melalui matriks korelasi polikorik (polychoric correlation). Menghindari distorsi atenuasi muatan faktor akibat pelanggaran skala kontinu.")
               )
             ),
             div(
@@ -4556,7 +4556,7 @@ ui <- page_navbar(
                 )
               ),
               p(class = "small text-muted mb-0",
-                "Rekomendasi Praktis: Pada skala psikologi Likert 4-5 opsi respons, gunakan WLSMV atau MLR guna menjamin kestabilan estimasi parameter."
+                "Rekomendasi Praktis: Pada skala psikologi Likert 4-5 opsi responss, gunakan WLSMV atau MLR guna menjamin kestabilan estimasi parameter."
               )
             )
           )
@@ -4583,8 +4583,8 @@ ui <- page_navbar(
                 class = "small mb-2",
                 tags$li(strong("Uji Chi-Kuadrat (chi^2, df, p-value): "), "Menguji hipotesis nol kesesuaian sempurna antara matriks kovarians sampel dan matriks kovarians model. Catatan Kritis: Chi-kuadrat sangat sensitif terhadap ukuran sampel N; pada sampel N > 200, penolakan H0 (p < 0.05) merupakan keniscayaan matematis akibat tingginya kekuatan uji (statistical power), bukan bukti penolakan substantif model."),
                 tags$li(strong("Comparative Fit Index (CFI) & Tucker-Lewis Index (TLI): "), "Mengevaluasi peningkatan kesesuaian model dibandingkan model dasar (baseline/null model). Ambang batas: >= 0.90 (dapat diterima) dan >= 0.95 (kesesuaian sangat baik)."),
-                tags$li(strong("Root Mean Square Error of Approximation (RMSEA): "), "Mengukur ketidaksesuaian parsimoni per derajat kebebasan pada populasi. Ambang batas: <= 0.05 (close fit), <= 0.08 (reasonable fit), disertai batas atas 90% CI < 0.10."),
-                tags$li(strong("Standardized Root Mean Square Residual (SRMR): "), "Rata-rata selisih terstandarisasi antara korelasi observasi dan korelasi model. Ambang batas: <= 0.08.")
+                tags$li(strong("Root Mean Square Error of Approximation (RMSEA): "), "Mengukur kesalahan aproksimasi kovarians per derajat kebebasan pada tingkat populasi (dengan penalti kompleksitas parameter). Ambang batas: <= 0.05 (close fit), <= 0.08 (reasonable fit), disertai batas atas 90% CI < 0.10."),
+                tags$li(strong("Standardized Root Mean Square Residual (SRMR): "), "Rata-rata selisih terstandardisasi antara korelasi observasi dan korelasi model. Ambang batas: <= 0.08.")
               )
             ),
             div(
@@ -4618,7 +4618,7 @@ ui <- page_navbar(
               h6("Muatan Faktor & Demistifikasi Cronbach's Alpha vs McDonald's Omega", class = "text-primary fw-bold mb-2"),
               p(
                 tags$strong("Standar Retensi Muatan Faktor (Standardized Factor Loading / lambda): "),
-                "Muatan faktor terstandarisasi merefleksikan korelasi antara indikator dan variabel laten. ",
+                "Muatan faktor terstandardisasi merefleksikan korelasi antara indikator dan variabel laten. ",
                 "Nilai ", tags$code("lambda >= 0.40"), " merupakan batas retensi minimal (Hair et al., 2019), sedangkan ",
                 tags$code("lambda >= 0.50"), " (menjelaskan >= 25% varians butir) atau ",
                 tags$code("lambda >= 0.70"), " (menjelaskan >= 50% varians butir) mencerminkan kualitas indikator yang sangat baik."
@@ -4710,13 +4710,13 @@ ui <- page_navbar(
             div(
               h6("Transformasi Ordinal ke Skala Interval Invarian (Rasch, 1960)", class = "text-primary fw-bold mb-2"),
               p(
-                "Teori Tes Klasik (CTT) memiliki kelemahan mendasar: skor mentah total (", tags$em("raw sum score"), ") berskala ordinal dan memiliki spasi antar-kategori yang tidak setara. ",
+                "Teori Tes Klasik (CTT) memiliki kelemahan mendasar: skor mentah total (", tags$em("raw sum score"), ") berskala ordinal dan memiliki spasi antarkategori yang tidak setara. ",
                 "Selain itu, indeks kesulitan butir CTT bergantung pada kemampuan sampel (", tags$em("sample-dependent"), "), sedangkan estimasi kemampuan responden bergantung pada paket tes tertentu (", tags$em("test-dependent"), ")."
               ),
               p(
                 tags$strong("Prinsip Objektivitas Khusus (Specific Objectivity): "),
                 "Model Rasch mengatasi keterbatasan tersebut dengan memisahkan parameter kemampuan subjek (", tags$code("theta"), ") dan tingkat kesulitan butir (", tags$code("beta"), ") secara independen. ",
-                "Melalui transformasi log-odds (logit), model Rasch mengonversi data respons ordinal diskrit ke dalam kontinum linier berskala interval yang invarian lintas kelompok partisipan (Bond & Fox, 2015)."
+                "Melalui transformasi log-odds (logit), model Rasch mengonversi data respons ordinal diskrit ke dalam kontinum linear berskala interval yang invarian lintas kelompok partisipan (Bond & Fox, 2015)."
               )
             ),
             div(
@@ -4754,7 +4754,7 @@ ui <- page_navbar(
               ),
               tags$ul(
                 class = "small mb-2",
-                tags$li(strong("Rating Scale Model (RSM - Andrich, 1978): "), "Mengasumsikan bahwa jarak relatif antar-ambang kategori (threshold tau_k) berjarak seragam di seluruh butir instrumen. Model ini sangat parsimonius dan cocok untuk kuesioner dengan opsi respons identik dan format terstandarisasi ketat."),
+                tags$li(strong("Rating Scale Model (RSM - Andrich, 1978): "), "Mengasumsikan bahwa jarak relatif antar-ambang kategori (threshold tau_k) berjarak seragam di seluruh butir instrumen. Model ini memiliki parsimoni tinggi (hemat parameter) dan cocok untuk kuesioner dengan opsi responss identik dan format terstandardisasi ketat."),
                 tags$li(strong("Partial Credit Model (PCM - Masters, 1982): "), "Membebaskan asumsi jarak seragam, memungkinkan setiap butir memiliki parameter ambang batas langkah (step thresholds beta_ik) yang unik dan independen. Model ini lebih fleksibel dalam menangkap variasi psikometrik antar-butir."),
                 tags$li(strong("Model Multidimensi (MRSM & MPCM via Engine TAM): "), "Memperluas RSM dan PCM ke dalam ruang vektor laten multidimensi (theta_1, theta_2, ..., theta_D). Kovarians antar-dimensi diestimasi secara simultan dengan integrasi kuadratur Gauss-Hermite (Adams et al., 1997; Wu et al., 2012).")
               )
@@ -4788,11 +4788,11 @@ ui <- page_navbar(
             div(
               h6("Statistik Infit & Outfit Mean Square (MNSQ)", class = "text-primary fw-bold mb-2"),
               p(
-                "Kesesuaian data dengan model dievaluasi melalui statistik residu kuadrat rata-rata (", tags$em("Mean Square / MNSQ"), ") terstandarisasi. Nilai ekspektasi model adalah persis ", tags$strong("1.00"), ":"
+                "Kesesuaian data dengan model dievaluasi melalui statistik residu kuadrat rata-rata (", tags$em("Mean Square / MNSQ"), ") terstandardisasi. Nilai ekspektasi model adalah persis ", tags$strong("1.00"), ":"
               ),
               tags$ul(
                 class = "small mb-2",
-                tags$li(strong("Infit MNSQ (Information-Weighted): "), "Residu dibobot oleh varians informasi butir, menjadikannya sensitif terhadap pola respons yang tidak terduga pada butir yang sesuai dengan tingkat kemampuan responden (respons terarah)."),
+                tags$li(strong("Infit MNSQ (Information-Weighted): "), "Residu dibobot oleh varians informasi butir, menjadikannya sensitif terhadap pola responss yang tidak terduga pada butir yang sesuai dengan tingkat kemampuan responden (respons terarah)."),
                 tags$li(strong("Outfit MNSQ (Unweighted): "), "Residu unweighted yang sangat sensitif terhadap respons ekstrem atau anomali acak (outliers) pada butir yang jauh lebih sulit atau jauh lebih mudah daripada kemampuan responden."),
                 tags$li(strong("Rentang Kesesuaian Ideal (Wright & Linacre, 1994): "), "Untuk survei psikologi, kuesioner klinis, dan skala kepribadian: rentang kesesuaian adalah ", tags$strong("0.50 hingga 1.50"), ". Untuk tes prestasi presisi tinggi: rentang ideal 0.70 hingga 1.30.")
               ),
@@ -4850,8 +4850,8 @@ ui <- page_navbar(
               tags$ul(
                 class = "small text-muted mb-3",
                 tags$li(strong("Titik Lokasi Butir (\\delta): "), "Titik oranye tegas berbingkai gelap merefleksikan tingkat kesulitan rata-rata butir."),
-                tags$li(strong("Garis Ambang Kategori (T1, T2, T3, ...): "), "Kode warna distingtif menunjukkan batas transisi logit di mana responden memiliki peluang 50:50 untuk melangkah ke kategori respons yang lebih tinggi."),
-                tags$li(strong("Dukungan Multidimensi: "), "Pada pemodelan multidimensi (MRSM/MPCM), histogram distribusi kemampuan responden ditampilkan per sub-dimensi secara berdampingan tanpa mengorbankan keterbacaan sumbu butir.")
+                tags$li(strong("Garis Ambang Kategori (T1, T2, T3, ...): "), "Kode warna yang berbeda menunjukkan batas transisi logit di mana responden memiliki peluang 50:50 untuk melangkah ke kategori respons yang lebih tinggi."),
+                tags$li(strong("Dukungan Multidimensi: "), "Pada pemodelan multidimensi (MRSM/MPCM), histogram distribusi kemampuan responden ditampilkan per subdimensi secara berdampingan tanpa mengorbankan keterbacaan sumbu butir.")
               ),
               div(
                 class = "alert alert-light border small mb-0 py-2",
@@ -5319,9 +5319,9 @@ server <- function(input, output, session) {
       names.arg = h$mids,
       col = "#650915",
       border = "#C5A059",
-      xlab = paste("Pilihan Respon Butir:", itm),
+      xlab = paste("Pilihan Respons Butir:", itm),
       ylab = "Frekuensi Responden",
-      main = paste("Sebaran Empiris Respon Butir:", itm),
+      main = paste("Sebaran Empiris Respons Butir:", itm),
       las = 1,
       col.main = "#650915",
       ylim = c(0, max_cnt * 1.15)
@@ -5595,7 +5595,7 @@ server <- function(input, output, session) {
       diag = TRUE,
       mar = c(0, 0, 2, 0)
     )
-    title(main = "Heatmap Matriks Korelasi Polikhorik (\u03c1)", col.main = "#650915", font.main = 2, cex.main = 1.1)
+    title(main = "Heatmap Matriks Korelasi Polikorik (\u03c1)", col.main = "#650915", font.main = 2, cex.main = 1.1)
   })
 
   # Delta Attenuation Matrix Reactive, DT, Heatmap & Download
@@ -5688,7 +5688,7 @@ server <- function(input, output, session) {
       Butir_A = colnames(R_sub)[pairs[, 2]],
       Butir_B = rownames(R_sub)[pairs[, 1]],
       r_Pearson = round(R_sub[lower.tri(R_sub)], 3),
-      rho_Polikhorik = round(rho_sub[lower.tri(rho_sub)], 3),
+      rho_Polikorik = round(rho_sub[lower.tri(rho_sub)], 3),
       Selisih_Atenuasi = round(rho_sub[lower.tri(rho_sub)] - R_sub[lower.tri(R_sub)], 3),
       stringsAsFactors = FALSE
     )
@@ -5718,7 +5718,7 @@ server <- function(input, output, session) {
   output$vb_cfa_delta_pct_mean <- renderText({
     d <- cfa_cor_diff_df_reactive()
     if (is.null(d) || nrow(d) == 0) return("-")
-    pcts <- (d$Selisih_Atenuasi / abs(d$rho_Polikhorik)) * 100
+    pcts <- (d$Selisih_Atenuasi / abs(d$rho_Polikorik)) * 100
     pcts <- pcts[is.finite(pcts)]
     sprintf("%.1f%%", mean(pcts, na.rm = TRUE))
   })
@@ -5961,7 +5961,7 @@ server <- function(input, output, session) {
       Evaluasi_Psikometrika = c(
         if (!is.null(a_sel_obj) && a_sel_obj$alpha >= 0.70) "Konsistensi Internal Sangat Baik (>= 0.70)" else "Dapat Diterima / Butuh Penguatan",
         if (!is.null(o_sel_obj) && o_sel_obj$omega >= 0.70) "Reliabilitas Konstruk Presisi (Bebas Asumsi Tau-Ekuivalen)" else "Dapat Diterima",
-        "Optimal & Parsimonius"
+        "Optimal & Hemat Parameter"
       ),
       stringsAsFactors = FALSE
     )
@@ -6024,15 +6024,15 @@ server <- function(input, output, session) {
           Model_Awal = c(sprintf("%.3f", chisq_f), sprintf("%d", as.integer(df_f)), sprintf("%.3f", p_f), sprintf("%.3f", cfi_f), sprintf("%.3f", tli_f), sprintf("%.3f", rmsea_f), sprintf("%.3f", srmr_f), sprintf("%.3f", aic_f), sprintf("%.3f", bic_f)),
           Model_Setelah_Eliminasi = c(sprintf("%.3f", chisq_s), sprintf("%d", as.integer(df_s)), sprintf("%.3f", p_s), sprintf("%.3f", cfi_s), sprintf("%.3f", tli_s), sprintf("%.3f", rmsea_s), sprintf("%.3f", srmr_s), sprintf("%.3f", aic_s), sprintf("%.3f", bic_s)),
           `Perubahan (\\Delta)` = c(sprintf("%+.3f", chisq_s - chisq_f), sprintf("%+d", as.integer(df_s - df_f)), sprintf("%+.3f", p_s - p_f), sprintf("%+.3f", cfi_s - cfi_f), sprintf("%+.3f", tli_s - tli_f), sprintf("%+.3f", rmsea_s - rmsea_f), sprintf("%+.3f", srmr_s - srmr_f), sprintf("%+.3f", aic_s - aic_f), sprintf("%+.3f", bic_s - bic_f)),
-          Evaluasi_Parsimoni = c(
+          Evaluasi_Fit = c(
             "Penurunan deviasi kovarians empiris",
             "Peningkatan derajat kebebasan model",
             "Signifikansi statistik",
             ifelse(cfi_s >= cfi_f, "Peningkatan Kesesuaian Komparatif (Fit Naik)", "Atenuasi minor"),
-            ifelse(tli_s >= tli_f, "Peningkatan Parsimoni Relatif (Fit Naik)", "Atenuasi minor"),
+            ifelse(tli_s >= tli_f, "Peningkatan Kesesuaian Relatif (Fit Naik)", "Atenuasi minor"),
             ifelse(rmsea_s <= rmsea_f, "Penurunan Error Aproksimasi (Optimal)", "Perubahan toleransi error"),
             ifelse(srmr_s <= srmr_f, "Penurunan Residual Standar (Optimal)", "Perubahan residual"),
-            "Penurunan AIC (Model Lebih Parsimonius)",
+            "Penurunan AIC (Model Lebih Hemat/Efisien)",
             "Penurunan BIC (Penalti Parameter Efektif)"
           ),
           stringsAsFactors = FALSE
@@ -6215,8 +6215,8 @@ server <- function(input, output, session) {
         ifelse(!is.na(tli_val) && tli_val >= 0.95, "Good Fit", ifelse(!is.na(tli_val) && tli_val >= 0.90, "Acceptable Fit", "Poor Fit")),
         ifelse(!is.na(rmsea_val) && rmsea_val <= 0.06, "Good Fit", ifelse(!is.na(rmsea_val) && rmsea_val <= 0.08, "Acceptable Fit", "Poor Fit")),
         ifelse(!is.na(srmr_val) && srmr_val <= 0.08, "Good Fit", "Poor Fit"),
-        if (!is.na(aic_val)) "Kesesuaian Parsimoni" else "Tidak Tersedia (Estimator WLS/DWLS/ULS)",
-        if (!is.na(bic_val)) "Kesesuaian Parsimoni" else "Tidak Tersedia (Estimator WLS/DWLS/ULS)"
+        if (!is.na(aic_val)) "Kriteria Informasi (Komparasi Model)" else "Tidak Tersedia (Estimator WLS/DWLS/ULS)",
+        if (!is.na(bic_val)) "Kriteria Informasi (Komparasi Model)" else "Tidak Tersedia (Estimator WLS/DWLS/ULS)"
       ),
       stringsAsFactors = FALSE
     )
@@ -7357,7 +7357,7 @@ server <- function(input, output, session) {
     }
     
     withProgress(message = sprintf("Estimasi TAM (IRT) Sedang Berlangsung [%d Cores]...", n_cores_alloc), 
-                 detail = "Menyiapkan matriks respon & estimasi EM (doParallel)...", value = 0.2, {
+                 detail = "Menyiapkan matriks respons & estimasi EM (doParallel)...", value = 0.2, {
       
       df_mat <- as.matrix(df)
       min_val <- min(df_mat, na.rm = TRUE)
@@ -7658,7 +7658,7 @@ server <- function(input, output, session) {
       if (inf_m >= 0.50 && inf_m <= 1.50 && out_m >= 0.50 && out_m <= 1.50) {
         "Produktif (0.5 - 1.5 MNSQ)"
       } else {
-        "Perlu Evaluasi Respon Aberan"
+        "Perlu Evaluasi Respons Aberan"
       }
     }
     
@@ -8604,7 +8604,7 @@ server <- function(input, output, session) {
           "Penurunan BIC mengonfirmasi kecocokan di bawah penalti kompleksitas",
           "Presisi konsistensi estimasi kemampuan laten (EAP)",
           "Presisi estimasi kemampuan tertimbang tanpa bias (WLE)",
-          "Mendekati nilai ekspektasi teoritis 1.00 (model fit optimal)",
+          "Mendekati nilai ekspektasi teoretis 1.00 (model fit optimal)",
           "Pereduksian outliers dan respons tak terduga pada butir",
           "Peningkatan proporsi butir produktif dalam batas Linacre (2002)",
           "Peningkatan integritas kelompok partisipan bebas tebakan acak"
@@ -8892,7 +8892,7 @@ server <- function(input, output, session) {
     df <- rasch_data_store()
     req(nrow(df) >= 30, ncol(df) >= 4)
     
-    withProgress(message = "Estimasi Komparasi 4 Model Rasch (TAM)...", detail = "Menyiapkan matriks respon politomi...", value = 0.15, {
+    withProgress(message = "Estimasi Komparasi 4 Model Rasch (TAM)...", detail = "Menyiapkan matriks respons politomi...", value = 0.15, {
       
       df_mat <- as.matrix(df)
       min_val <- min(df_mat, na.rm = TRUE)
@@ -9000,7 +9000,7 @@ server <- function(input, output, session) {
         if (is.na(comp_df$AIC[i])) "Tidak Konvergen"
         else if (comp_df$AIC[i] == min_aic && comp_df$BIC[i] == min_bic) "Model Terbaik (AIC & BIC Minimum)"
         else if (comp_df$AIC[i] == min_aic) "Model Terbaik (AIC Minimum)"
-        else if (comp_df$BIC[i] == min_bic) "Model Terbaik (BIC Minimum - Parsimoni Kuat)"
+        else if (comp_df$BIC[i] == min_bic) "Model Terbaik (BIC Minimum - Lebih Hemat Parameter)"
         else if (comp_df$Deviance[i] == min_dev) "Fit Data Tertinggi (-2LL Terendah)"
         else "Model Pembanding"
       })
@@ -9532,7 +9532,7 @@ server <- function(input, output, session) {
       0, 0, type = "n",
       xlim = xlim_range, ylim = c(0.4, 1.6),
       yaxt = "n", ylab = "",
-      xlab = "Besaran Efek Terstandarisasi (g > 0 = Memihak Intervensi)",
+      xlab = "Besaran Efek Terstandardisasi (g > 0 = Memihak Intervensi)",
       bty = "n", cex.lab = 0.85, col.lab = "#650915"
     )
     # Shaded magnitude zones
@@ -10165,7 +10165,7 @@ server <- function(input, output, session) {
       `Aras Varians (Multilevel Level)` = c(
         "Level 1: Kesalahan Sampling (Sampling Error)",
         paste0("Level 2: Varians Dalam-Klaster (Within-", ml$clust_col, ")"),
-        paste0("Level 3: Varians Antar-Klaster (Between-", ml$clust_col, ")"),
+        paste0("Level 3: Varians Antarklaster (Between-", ml$clust_col, ")"),
         "Total Heterogenitas Sejati (I^2 Level 2 + Level 3)"
       ),
       `Komponen Varians (\\sigma^2)` = c(
@@ -10837,7 +10837,7 @@ server <- function(input, output, session) {
     if (is.null(m) || is.null(m$res_mod)) return()
     res_mod <- m$res_mod
     txt <- sprintf(
-      "Analisis moderator subkelompok pada variabel %s menunjukkan statistik uji beda antar-subkelompok QB(df = %d) = %.2f, p = %.4f (R^2 = %.1f%%), dengan heterogenitas residual QE(df = %d) = %.2f, p = %.4f.",
+      "Analisis moderator subkelompok pada variabel %s menunjukkan statistik uji beda antarsubkelompok QB(df = %d) = %.2f, p = %.4f (R^2 = %.1f%%), dengan heterogenitas residual QE(df = %d) = %.2f, p = %.4f.",
       m$grp_var, res_mod$QMdf[1], res_mod$QM, res_mod$QMp,
       ifelse(!is.null(res_mod$R2) && !is.na(res_mod$R2), res_mod$R2, 0),
       res_mod$QEdf, res_mod$QE, res_mod$QEp
@@ -10858,7 +10858,7 @@ server <- function(input, output, session) {
     
     qb_text <- if (qb_sig) {
       paste0(
-        "Hasil uji omnibus moderator membuktikan adanya variasi besaran efek antar-subkelompok yang bermakna secara statistik (",
+        "Hasil uji omnibus moderator membuktikan adanya variasi besaran efek antarsubkelompok yang bermakna secara statistik (",
         "<em>QB</em> = ", sprintf("%.2f, df = %d, p = %.4f", res_mod$QM, res_mod$QMdf[1], res_mod$QMp), "). ",
         "Temuan ini mengindikasikan bahwa karakteristik <strong>", grp_var,
         "</strong> berperan sebagai moderator substantif yang menjelaskan heterogenitas efektivitas intervensi antarstudi klinis, ",
@@ -10867,9 +10867,9 @@ server <- function(input, output, session) {
       )
     } else {
       paste0(
-        "Hasil uji omnibus moderator mengindikasikan bahwa perbedaan besaran efek antar-subkelompok belum mencapai signifikansi statistik konvensional (",
+        "Hasil uji omnibus moderator mengindikasikan bahwa perbedaan besaran efek antarsubkelompok belum mencapai signifikansi statistik konvensional (",
         "<em>QB</em> = ", sprintf("%.2f, df = %d, p = %.4f", res_mod$QM, res_mod$QMdf[1], res_mod$QMp), "). ",
-        "Meskipun demikian, variasi parameter deskriptif antar-kategori tetap memberikan gambaran diferensial yang penting secara klinis."
+        "Meskipun demikian, variasi parameter deskriptif antarkategori tetap memberikan gambaran diferensial yang penting secara klinis."
       )
     }
     
@@ -10901,7 +10901,7 @@ server <- function(input, output, session) {
         "Secara khusus pada telaah format penghantaran intervensi, format ", tags$em("Individual"), " dan ", tags$em("Group"), " tatap muka ",
         "memperlihatkan besaran efek yang relatif lebih tinggi dibandingkan format ", tags$em("Guided Digital"), ". ",
         "Meskipun intervensi digital terpandu menawarkan skalabilitas implementasi yang luas, perbedaan intensitas relasi terapeutik (", tags$em("therapeutic alliance"), ") ",
-        "memberikan kontribusi nyata terhadap variabilitas respon klinis partisipan."
+        "memberikan kontribusi nyata terhadap variabilitas respons klinis partisipan."
       )
     } else {
       NULL
@@ -11035,7 +11035,7 @@ server <- function(input, output, session) {
         refline = 0,
         legend = TRUE,
         xlab = "Besaran Efek Intervensi (Hedges' g)",
-        ylab = "Standar Error (SE)"
+        ylab = "Galat Baku (SE)"
       )
     } else if (input$funnel_type == "trimfill") {
       tf <- tryCatch(trimfill(res), error = function(e) res)
@@ -11043,13 +11043,13 @@ server <- function(input, output, session) {
         tf,
         legend = TRUE,
         xlab = "Besaran Efek Intervensi (Hedges' g) — Imputasi Trim & Fill",
-        ylab = "Standar Error (SE)"
+        ylab = "Galat Baku (SE)"
       )
     } else {
       funnel(
         res,
         xlab = "Besaran Efek Intervensi (Hedges' g)",
-        ylab = "Standar Error (SE)"
+        ylab = "Galat Baku (SE)"
       )
     }
   }
@@ -11095,7 +11095,7 @@ server <- function(input, output, session) {
     
     data.frame(
       Metrik = c(
-        "Statistik Regresi Linier Egger (k.min = 5)",
+        "Statistik Regresi Linear Egger (k.min = 5)",
         "Nilai p (p-value)",
         "Limit Estimate (Intersep b0 saat SE -> 0)",
         "Batas 95% CI Limit Estimate",
